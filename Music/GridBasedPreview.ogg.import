@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GridBasedPreview.ogg-c41cf6e2c397d24510cd8449c902f41d.oggstr"
+
+[deps]
+
+source_file="res://Music/GridBasedPreview.ogg"
+dest_files=[ "res://.import/GridBasedPreview.ogg-c41cf6e2c397d24510cd8449c902f41d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/OneMore.ogg-ce2c2e92557d598daa263ccba15e7ae3.oggstr"
+
+[deps]
+
+source_file="res://Music/OneMore.ogg"
+dest_files=[ "res://.import/OneMore.ogg-ce2c2e92557d598daa263ccba15e7ae3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

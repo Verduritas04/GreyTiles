@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Mode.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/DefaultFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/SelectMode.gd" type="Script" id=3]
+[ext_resource path="res://Resources/empty.tres" type="StyleBox" id=4]
+[ext_resource path="res://Sprites/Arrow.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Cross.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Bounce"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer2:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 128 ), Vector2( 0, 120 ), Vector2( 0, 128 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 8 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="SelectMode" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 72.0
+margin_top = 24.0
+margin_right = 264.0
+margin_bottom = 152.0
+custom_constants/separation = 64
+
+[node name="Mode" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 0.0
+margin_bottom = 128.0
+
+[node name="Mode2" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_right = 64.0
+margin_bottom = 128.0
+mode = 30
+
+[node name="Mode3" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 128.0
+margin_right = 128.0
+margin_bottom = 128.0
+mode = 15
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_top = 128.0
+margin_right = 320.0
+margin_bottom = 180.0
+custom_constants/separation = 64
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer2"]
+margin_right = 320.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 320, 0 )
+rect_clip_content = false
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Select a game mode"
+text = "Select a game mode"
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Bounce = SubResource( 1 )
+
+[node name="Play" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 152.0
+margin_right = 296.0
+margin_bottom = 172.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0.25, 0.25, 0.25, 1 )
+custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+disabled = true
+enabled_focus_mode = 0
+text = "----"
+
+[node name="Arrow" type="AnimatedSprite" parent="."]
+position = Vector2( -16, 112 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( 0, 4 )
+
+[node name="Cross" parent="." instance=ExtResource( 6 )]
+position = Vector2( 8, 8 )
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]

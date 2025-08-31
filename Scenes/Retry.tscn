@@ -1,0 +1,151 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/DefaultFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/empty.tres" type="StyleBox" id=2]
+[ext_resource path="res://Scripts/Retry.gd" type="Script" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 0.75, 0.75, 0.75, 1 )
+Button/colors/font_color_disabled = Color( 0.25, 0.25, 0.25, 1 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/styles/disabled = ExtResource( 2 )
+Button/styles/focus = ExtResource( 2 )
+Button/styles/hover = ExtResource( 2 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Trans"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/VBoxContainer/HBoxContainer/Button2:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/VBoxContainer/HBoxContainer/Button:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+
+[node name="Retry" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 0.74902 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+theme = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 32
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 42.0
+margin_right = 320.0
+margin_bottom = 93.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="TimeUp" type="Label" parent="Control/VBoxContainer/VBoxContainer2"]
+margin_right = 320.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 0, 27 )
+text = "time_up"
+align = 1
+
+[node name="Score" type="Label" parent="Control/VBoxContainer/VBoxContainer2"]
+margin_top = 27.0
+margin_right = 320.0
+margin_bottom = 39.0
+text = "Score : 5000"
+align = 1
+valign = 1
+
+[node name="HiScore" type="Label" parent="Control/VBoxContainer/VBoxContainer2"]
+margin_top = 39.0
+margin_right = 320.0
+margin_bottom = 51.0
+text = "Hi score : 5000"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 125.0
+margin_right = 320.0
+margin_bottom = 137.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+margin_left = 120.0
+margin_right = 155.0
+margin_bottom = 12.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "retry"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+margin_left = 171.0
+margin_right = 199.0
+margin_bottom = 12.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Trans"
+anims/Trans = SubResource( 2 )
+
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

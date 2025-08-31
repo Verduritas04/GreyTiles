@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Cross.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Panel.tres" type="StyleBox" id=2]
+[ext_resource path="res://Scenes/SomeButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Tiles.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Palettes.gd" type="Script" id=5]
+
+[node name="Palettes" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+colors = [ [ Color( 0, 0, 0, 1 ), Color( 0.33, 0.33, 0.33, 1 ), Color( 0.67, 0.67, 0.67, 1 ), Color( 1, 1, 1, 1 ) ], [ Color( 0.027451, 0.0941176, 0.129412, 1 ), Color( 0.188235, 0.407843, 0.313726, 1 ), Color( 0.52549, 0.752941, 0.423529, 1 ), Color( 0.878431, 0.972549, 0.811765, 1 ) ], [ Color( 0, 0.156863, 0.34902, 1 ), Color( 0, 0.470588, 0.6, 1 ), Color( 0.407843, 0.682353, 0.831373, 1 ), Color( 0.980392, 0.992157, 1, 1 ) ], [ Color( 0.0784314, 0.0627451, 0.0745098, 1 ), Color( 0.231373, 0.0901961, 0.145098, 1 ), Color( 0.45098, 0.0901961, 0.176471, 1 ), Color( 0.705882, 0.12549, 0.164706, 1 ) ], [ Color( 0.341176, 0.145098, 0.231373, 1 ), Color( 0.831373, 0.431373, 0.2, 1 ), Color( 0.94902, 0.713726, 0.239216, 1 ), Color( 0.996078, 1, 0.901961, 1 ) ], [ Color( 0.0392157, 0.0352941, 0.0705882, 1 ), Color( 0.439216, 0.341176, 0.611765, 1 ), Color( 0.878431, 0.588235, 0.658824, 1 ), Color( 1, 0.945098, 0.921569, 1 ) ], [ Color( 0, 0.0156863, 0.0588235, 1 ), Color( 0.4032, 0.441, 0.63, 1 ), Color( 0.796078, 0.627451, 0.803922, 1 ), Color( 1, 0.968627, 1, 1 ) ] ]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 96.0
+margin_top = 40.0
+margin_right = 224.0
+margin_bottom = 160.0
+custom_styles/panel = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_right = 128.0
+margin_bottom = 120.0
+custom_constants/separation = 2
+alignment = 1
+
+[node name="Button" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 39.0
+margin_top = 12.0
+margin_right = 88.0
+margin_bottom = 24.0
+size_flags_horizontal = 4
+text = "Default"
+
+[node name="Button2" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 57.0
+margin_top = 26.0
+margin_right = 71.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+text = "GB"
+
+[node name="Button3" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 50.0
+margin_top = 40.0
+margin_right = 78.0
+margin_bottom = 52.0
+size_flags_horizontal = 4
+text = "Cyan"
+
+[node name="Button4" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 30.0
+margin_top = 54.0
+margin_right = 98.0
+margin_bottom = 66.0
+size_flags_horizontal = 4
+text = "Human Juce"
+
+[node name="Button5" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 45.0
+margin_top = 68.0
+margin_right = 82.0
+margin_bottom = 80.0
+size_flags_horizontal = 4
+text = "Slime"
+
+[node name="Button6" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 20.0
+margin_top = 82.0
+margin_right = 107.0
+margin_bottom = 94.0
+size_flags_horizontal = 4
+text = "Vibrant ghost"
+
+[node name="Button7" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 36.0
+margin_top = 96.0
+margin_right = 92.0
+margin_bottom = 108.0
+size_flags_horizontal = 4
+text = "Lavander"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 160, 24 )
+texture = ExtResource( 4 )
+
+[node name="Cross" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 8 )
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button7" to="." method="_on_Button7_pressed"]
+[connection signal="cross" from="Cross" to="." method="_on_Cross_cross"]

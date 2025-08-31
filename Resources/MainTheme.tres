@@ -1,0 +1,52 @@
+[gd_resource type="Theme" load_steps=14 format=2]
+
+[ext_resource path="res://Resources/DefaultFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/empty.tres" type="StyleBox" id=2]
+[ext_resource path="res://Sprites/CheckBox1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/CheckBox4.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Slider1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Slider2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/CheckBox2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Slider3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/CheckBox3.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Panel.tres" type="StyleBox" id=10]
+[ext_resource path="res://Resources/panelThinHover.tres" type="StyleBox" id=11]
+[ext_resource path="res://Resources/panelThinDisabled.tres" type="StyleBox" id=12]
+[ext_resource path="res://Resources/panelThin.tres" type="StyleBox" id=13]
+
+[resource]
+default_font = ExtResource( 1 )
+CheckBox/colors/font_color = Color( 0.75, 0.75, 0.75, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.25, 0.25, 0.25, 1 )
+CheckBox/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckBox/colors/font_color_hover = Color( 1, 1, 1, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/icons/checked = ExtResource( 7 )
+CheckBox/icons/checked_disabled = ExtResource( 4 )
+CheckBox/icons/unchecked = ExtResource( 3 )
+CheckBox/icons/unchecked_disabled = ExtResource( 9 )
+HSlider/icons/grabber = ExtResource( 5 )
+HSlider/icons/grabber_disabled = ExtResource( 6 )
+HSlider/icons/grabber_highlight = ExtResource( 8 )
+HSlider/styles/grabber_area = ExtResource( 2 )
+HSlider/styles/grabber_area_highlight = ExtResource( 2 )
+HSlider/styles/slider = ExtResource( 13 )
+OptionButton/colors/font_color = Color( 0.75, 0.75, 0.75, 1 )
+OptionButton/colors/font_color_disabled = Color( 0.25, 0.25, 0.25, 1 )
+OptionButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+OptionButton/colors/font_color_hover = Color( 1, 1, 1, 1 )
+OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+OptionButton/styles/disabled = ExtResource( 12 )
+OptionButton/styles/focus = ExtResource( 2 )
+OptionButton/styles/hover = ExtResource( 11 )
+OptionButton/styles/normal = ExtResource( 13 )
+OptionButton/styles/pressed = ExtResource( 11 )
+Panel/styles/panel = ExtResource( 10 )
+PopupMenu/colors/font_color = Color( 0.75, 0.75, 0.75, 1 )
+PopupMenu/colors/font_color_disabled = Color( 0.25, 0.25, 0.25, 1 )
+PopupMenu/colors/font_color_hover = Color( 1, 1, 1, 1 )
+PopupMenu/colors/font_color_separator = Color( 0, 0, 0, 1 )
+PopupMenu/icons/radio_checked = ExtResource( 7 )
+PopupMenu/icons/radio_unchecked = ExtResource( 3 )
+PopupMenu/styles/hover = ExtResource( 2 )
+PopupMenu/styles/panel = ExtResource( 13 )

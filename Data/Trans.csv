@@ -1,0 +1,44 @@
+,en,es
+start,Start,Jugar
+settings,Settings,Ajustes
+colors,Colors,Colores
+music_box,Music box,Música
+credits,Credits,Créditos
+quit,Quit,Salir
+intruction_0,"Use the mouse to move tiles
+If two tiles are the same, you can merge them.","Usa el ratón para mover casillas.
+Si dos casillas son iguales, puedes juntarlas."
+intruction_1,Your goal is to merge the two odd tiles.,Tu objetivo es juntar las dos casillas diferentes.
+,,
+fullscreen,Fullscreen,Pantalla completa
+screenshake,Screenshake,Sacudida de pantalla
+you_monster,You monster!,¡Monstruo!
+language,Language: ,Idioma: 
+resolution,Resolution: ,Resolución: 
+sound_volume,Sound volume: ,Volumen del sonido: 
+music_volume,Music volume: ,Volumen de la música: 
+master_volume,Master volume: ,Vulumen maestro: 
+,,
+time_up,Time up!,¡Se acabó el tiempo!
+retry,Retry,Reintentar
+exit,Exit,Salir
+score,Score: ,Score: 
+hi_score,High score: ,High score: 
+new_hi_score,New high score! : ,¡Nuevo high score! : 
+,,
+music,Music,Música
+select_game_mode,[center]Select a game mode,[center]Seleccione un modo de juego
+click_to_play,Click here to play!,¡Haz click aquí para jugar!
+game_mode,[center]Game mode: [color=#aaaaaa],[center]Modo de juego: [color=#aaaaaa]
+seconds_song, seconds[/color]\nSong: [color=#aaaaaa], segundos[/color]\nCanción: [color=#aaaaaa]
+,,
+music_box_title,~ MUSIC BOX ~,~ MÚSICA ~
+welcome_music,"Welcome to the music box!
+Please select a song.","¡Bienvenido a la ""caja de música""!
+Por favor seleccione una canción."
+description_0,"I wanted something a bit sad for the menu theme, not sure why.","Quería algo triste para la canción del menú, no se porque."
+description_1,"...
+This song is kinda weird...","...
+Esta canción es un poco rara..."
+description_2,I had fun making this.,Me lo pasé bien creando esto.
+description_3,I'm running out of ideas for this descriptions.,Me estoy quedando sin ideas para estas descripciones.
